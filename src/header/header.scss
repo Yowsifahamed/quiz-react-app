@@ -1,0 +1,39 @@
+.custom-nav-bar{
+    background-color: #c00;
+    text-align: center;
+
+    .cust-navbar-nav{
+        list-style-type: none;
+        padding: 10px;
+        margin-bottom: 0px;
+        .cust-nav-item{
+            display: inline-block;
+            padding: 4px 24px;
+            border-radius: 20px;
+            background-color: #cc0000;
+            margin: 0px 5px 0px 5px;
+            box-shadow: 0 0 5px 1px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .active-nav{  
+            background: #fff !important;
+            color: #c00 !important;
+            font-weight: 500;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .custom-nav-bar{
+        .cust-navbar-nav {
+            .cust-nav-item {
+                padding: 3px 4px;
+                min-width: 70px;
+                margin: 5px 3px;
+                font-size: 75%;
+            }
+        }
+    }
+}
