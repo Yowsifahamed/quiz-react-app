@@ -13,7 +13,7 @@ const headerArray = [
 const selectedArrayIndex: number = 0;
 
 const dynamicNav = headerArray.map((item,i) => {
-    return  <li className="cust-nav-item"> { item.nav } </li>
+    return  <li className="cust-nav-item" key={i}> { item.nav } </li>
 });
 
 export class Header extends React.Component {
