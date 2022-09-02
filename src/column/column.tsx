@@ -7,7 +7,7 @@ class Column extends React.Component {
   constructor(props:any) {
     super(props);
     this.state = { 
-      paramId: null
+      paramId: ''
     };
   }
 
