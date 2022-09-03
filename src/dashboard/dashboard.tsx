@@ -25,7 +25,7 @@ export class Dashboard extends React.Component {
     return <div className="dashboard">
       <div className="row">
         {this.dashboardData.map((item, i) => (
-          <div className="col-sm-12 col-md-4 das-col-sm">
+          <div className="col-sm-12 col-md-4 das-col-sm" key={i}>
             <Link to={`/quiz/${item.quiz_role}`}>
               <div className="img-section">
                 <img className="content-img" alt="quiz app" src={`${item.col}`} />
