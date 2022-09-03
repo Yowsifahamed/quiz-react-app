@@ -1,7 +1,7 @@
 import React from "react";
 import withRouter from "./withRouter";
 import JSONQUIZ from '../assets/db/quizCollection.json';
-
+import './column.scss';
 class Column extends React.Component {
   private params: any;
   public scorePageEnabled: boolean = false;
