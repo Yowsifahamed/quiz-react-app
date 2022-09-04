@@ -5,7 +5,9 @@ import './column.scss';
 class Column extends React.Component {
   private params: any;
   public scorePageEnabled: boolean = false;
-  public celebrarityData = JSONQUIZ.quizCol
+  public JSONData = JSONQUIZ.quizCol;
+  public celebrarityData: any = [];
+  public quizEnabled: boolean = false;
 
   constructor(props: any) {
     super(props);
@@ -26,17 +28,41 @@ class Column extends React.Component {
     });
   };
 
-  getCurrentCelebrityData(){
+  getCurrentCelebrityData() {
+    console.log(" this.params")
     this.params = this.props;
-    console.log("1")
-    this.celebrarityData.forEach(element => {
-      if(element.quiz_role == this.params.params.name){
-        console.log("element",element)
+    this.JSONData.forEach(element => {
+      if (element.quiz_role == this.params.params.name) {
+        this.celebrarityData = element;
+        console.log("element", this.celebrarityData.quiz_start_image)
       }
     });
   }
 
   render() {
+      let quizStartContent;
+      if (this.quizEnabled) {
+        quizStartContent = 
+          <div className="quiz-collection">
+            <h2 className="questionText">
+              {/* {{ getroleDetails.quiz_collection[quizIndex].questionMd }} */}
+            </h2>
+            <div className="questionScore">
+
+              <span className="time low" id="time">⏰ Sec</span>
+
+              <span className="time-out" id="time">⏰ Time out</span>
+              <span className="points">🏆 </span>
+            </div>
+            <ul className="questionOptions" >
+              {/* <li className="questionOption"> {{ answersCol }} </li> */}
+            </ul>
+            <button className="nextBtn questionOption moveUp-enter-done" >
+              <div>Next</div>
+            </button>
+          </div>
+      }
+
     if (this.scorePageEnabled) {
       return <>
         <div className="score-content">
@@ -70,8 +96,8 @@ class Column extends React.Component {
     } else {
       return <>
         <div className="quiz-content">
-          {/* <img [src]="getroleDetails?.quiz_start_image" >
-       <img [src]="getroleDetails.quiz_collection[quizIndex].image"> */}
+          <img src={this.celebrarityData?.quiz_start_image} alt="alternative" />
+       {/* <img [src]="getroleDetails.quiz_collection[quizIndex].image"> */}
           <div className="content">
             <div className="screen-content">
               <div className="quiz-start-section">
@@ -80,25 +106,7 @@ class Column extends React.Component {
                 <button className="startBtn">Start the Quiz</button>
               </div>
 
-              {/* <!-- <p className="quizLoading"></p> --> */}
-              <div className="quiz-collection">
-                <h2 className="questionText">
-                  {/* {{ getroleDetails.quiz_collection[quizIndex].questionMd }} */}
-                </h2>
-                <div className="questionScore">
-
-                  <span className="time low" id="time">⏰ Sec</span>
-
-                  <span className="time-out" id="time">⏰ Time out</span>
-                  <span className="points">🏆 </span>
-                </div>
-                <ul className="questionOptions" >
-                  {/* <li className="questionOption"> {{ answersCol }} </li> */}
-                </ul>
-                <button className="nextBtn questionOption moveUp-enter-done" >
-                  <div>Next</div>
-                </button>
-              </div>
+              { quizStartContent }
             </div>
           </div>
         </div>
