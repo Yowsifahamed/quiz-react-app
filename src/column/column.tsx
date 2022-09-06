@@ -18,7 +18,7 @@ class Column extends React.Component {
 
   componentDidMount = () => {
     // this.getParams();
-    this.getCurrentCelebrityData();
+    // this.getCurrentCelebrityData();
   };
 
   getParams = () => {
