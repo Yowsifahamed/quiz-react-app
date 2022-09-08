@@ -2,8 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Column from './column/column';
-import QuizComponent from './column/QuizComponent';
-import QuizPage from './column/QuizPage';
 import { Dashboard } from './dashboard/dashboard';
 import { Footer } from './footer/footer';
 import { Header } from './header/header';
