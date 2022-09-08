@@ -14,27 +14,20 @@ class Column extends React.Component {
     this.state = {
       paramId: null
     };
+    this.getCurrentCelebrityData();
   }
 
-  componentDidMount = () => {
-    // this.getParams();
-    // this.getCurrentCelebrityData();
-  };
-
-  getParams = () => {
-    this.params = this.props;
-    this.setState({
-      paramId: this.params.params.name
-    });
+  componentDidUpdate = () => {
+    
   };
 
   getCurrentCelebrityData() {
-    console.log(" this.params")
     this.params = this.props;
+    console.log("params",this.params)
     this.JSONData.forEach(element => {
       if (element.quiz_role == this.params.params.name) {
         this.celebrarityData = element;
-        console.log("element", this.celebrarityData.quiz_start_image)
+        console.log("element", element)
       }
     });
   }
