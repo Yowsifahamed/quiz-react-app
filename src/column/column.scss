@@ -22,6 +22,7 @@
         font-family: beRegular;
         line-height: 35px;
         margin-bottom: 20px;
+        position: relative;
     
         .time.low {
             background-color: #adff2f;
@@ -44,6 +45,7 @@
             line-height: 35px;
             padding: 4px 6px 0;
             font-family: "Kanit", sans-serif;
+            width: 145px;
         }
     
         .points {
@@ -76,7 +78,8 @@
         border: 4px solid #fff;
         display: block;
         cursor: pointer;
-        position: relative
+        position: relative;
+        color: #fff;
     }
 
 }
@@ -188,18 +191,15 @@
     background: #c00;
     color: #fff;
     text-transform: uppercase;
-    font-family: beRegular;
     cursor: pointer;
     border: 0 solid;
     width: 100%;
-    display: -moz-box;
-    display: flex;
     justify-content: space-between;
     align-content: space-around;
     align-items: center;
-}
-
-.moveUp-enter-done {
+    margin: 10px 0;
+    font-weight: 700;
+    position: relative;
     font-family: 'Abril Fatface', cursive;
 }
 

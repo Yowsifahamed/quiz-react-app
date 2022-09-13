@@ -78,7 +78,7 @@ class Column extends React.Component<{}, MainState> {
             <ul className="questionOptions" >
               { quizSection }
             </ul>
-            <button className="nextBtn questionOption moveUp-enter-done" onClick={this.nextQuiz}>
+            <button className="nextBtn" onClick={this.nextQuiz}>
               <div>Next</div>
             </button>
           </div>
