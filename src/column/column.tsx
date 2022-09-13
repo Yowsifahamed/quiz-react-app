@@ -7,15 +7,13 @@ interface MainState {
   paramId: string,
   isToggleStartQuiz: boolean,
   celebrarityData: Array<any>,
-  quizNumber: number
+  quizNumber: number,
+  selectedAnswer: boolean
 }
 class Column extends React.Component<{}, MainState> {
   private params: any;
-  public scorePageEnabled: boolean = false;
   public JSONData = JSONQUIZ.quizCol;
   public celebrarityData: any = [];
-  public quizNumber: number = 0;
-  public quizSection: any;
 
   constructor(props: any) {
     super(props);
@@ -23,7 +21,8 @@ class Column extends React.Component<{}, MainState> {
       paramId: '',
       isToggleStartQuiz: false,
       celebrarityData: [],
-      quizNumber: 0
+      quizNumber: 0,
+      selectedAnswer: false
     };
     this.getCurrentCelebrityData();
     this.startQuiz = this.startQuiz.bind(this);
@@ -53,13 +52,26 @@ class Column extends React.Component<{}, MainState> {
     let { quizNumber} = this.state;
     quizNumber++;
     this.setState({ quizNumber: quizNumber });
-    console.log(this.state)
+  }
+
+  quizSelected(index:number){
+    this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].answers.forEach((element:any,i:any) => {
+      if(index == this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].correctAnswerIdx){
+        this.setState({ selectedAnswer: true });
+      }else{
+        this.setState({ selectedAnswer: false });
+      }
+    });
   }
 
   render() {
     const quizSection = this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].answers.map((answer:any,index:any) => {
-      return <li className="questionOption" key={index}> { answer } </li>
+      return <li  key={index} onClick={() => this.quizSelected(index)} className = { this.state.selectedAnswer === true ? 'rigth-answer' : 'wrong-answer' }
+      > { answer } 
+      </li>
     });
+
+    // className="questionOption"
 
     return (
       this.state.isToggleStartQuiz ? <>
