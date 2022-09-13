@@ -38,7 +38,6 @@ class Column extends React.Component<{}, MainState> {
 
   startQuiz() {
     this.setState({ isToggleStartQuiz: true });
-    this.setState({ isToggleStartQuiz: true });
     
   }
 
