@@ -13,6 +13,7 @@
         text-shadow: 2px 2px #000;
         -webkit-backdrop-filter: blur(2px);
         backdrop-filter: blur(2px);
+        color: #fff;
     }
     
     .questionScore {
@@ -95,54 +96,61 @@
         display: flex;
         justify-content: flex-end;
         bottom: 0px;
-
-        .screen-content {
-            max-width: 450px;
-            margin: 40px 100px 140px;
-            font-family: 'Kanit', sans-serif;
-            font-weight: 800;
-            text-align: left;
-
-            .quizTitle {
-                font-size: 69px;
-                font-weight: 400;
-                line-height: 69px;
-                text-transform: uppercase;
-                text-shadow: 1px 1px #000;
-                margin-bottom: 46px;
-            }
-
-            .ronaldo {
-                color: orangered;
-            }
-
-
-            .quizTagline {
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
-
-            .startBtn {
-                font-size: 35px;
-                padding: 15px 20px;
-                background: #c00;
-                color: #fff;
-                border: 0 solid;
-                text-transform: uppercase;
-                font-family: beRegular;
-                cursor: pointer;
-                font-family: 'Autour One', cursive;
-                font-weight: 800;
-            }
-            
-            
-            .startBtn:hover {
-                color: #999;
-            }
-        }
     }
 }
 
+.screen-content {
+    max-width: 450px;
+    margin: 40px 100px 140px;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 800;
+    text-align: left;
+
+    img{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        bottom: 0px;
+    }
+
+    .quizTitle {
+        font-size: 69px;
+        font-weight: 400;
+        line-height: 69px;
+        text-transform: uppercase;
+        text-shadow: 1px 1px #000;
+        margin-bottom: 46px;
+    }
+
+    .ronaldo {
+        color: orangered;
+    }
+
+
+    .quizTagline {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .startBtn {
+        font-size: 35px;
+        padding: 15px 20px;
+        background: #c00;
+        color: #fff;
+        border: 0 solid;
+        text-transform: uppercase;
+        font-family: beRegular;
+        cursor: pointer;
+        font-family: 'Autour One', cursive;
+        font-weight: 800;
+    }
+    
+    
+    .startBtn:hover {
+        color: #999;
+    }
+}
 
 
 

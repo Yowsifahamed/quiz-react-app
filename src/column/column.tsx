@@ -5,22 +5,29 @@ import './column.scss';
 
 interface MainState {
   paramId: string,
-  isToggleStartQuiz: boolean
+  isToggleStartQuiz: boolean,
+  celebrarityData: Array<any>,
+  quizNumber: number
 }
 class Column extends React.Component<{}, MainState> {
   private params: any;
   public scorePageEnabled: boolean = false;
   public JSONData = JSONQUIZ.quizCol;
   public celebrarityData: any = [];
+  public quizNumber: number = 0;
+  public quizSection: any;
 
   constructor(props: any) {
     super(props);
     this.state = {
       paramId: '',
-      isToggleStartQuiz: false
+      isToggleStartQuiz: false,
+      celebrarityData: [],
+      quizNumber: 0
     };
     this.getCurrentCelebrityData();
     this.startQuiz = this.startQuiz.bind(this);
+    this.nextQuiz = this.nextQuiz.bind(this);
   }
 
   componentDidUpdate = () => {
@@ -32,41 +39,54 @@ class Column extends React.Component<{}, MainState> {
     this.JSONData.forEach(element => {
       if (element.quiz_role == this.params.params.name) {
         this.celebrarityData = element;
+        let { celebrarityData} = this.state;
+        celebrarityData.push(element);
       }
-    });
+    })
   }
 
   startQuiz() {
     this.setState({ isToggleStartQuiz: true });
-    
+  }
+
+  nextQuiz() {
+    let { quizNumber} = this.state;
+    quizNumber++;
+    this.setState({ quizNumber: quizNumber });
+    console.log(this.state)
   }
 
   render() {
+    const quizSection = this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].answers.map((answer:any,index:any) => {
+      return <li className="questionOption" key={index}> { answer } </li>
+    });
+
     return (
       this.state.isToggleStartQuiz ? <>
-        <div className="quiz-collection">
-          <h2 className="questionText">
-            {/* {{ getroleDetails.quiz_collection[quizIndex].questionMd }} */}
-          </h2>
-          <div className="questionScore">
-
-            <span className="time low" id="time">⏰ Sec</span>
-
-            <span className="time-out" id="time">⏰ Time out</span>
-            <span className="points">🏆 </span>
+        <div className="screen-content">
+        <img src={this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].image} alt="alternative" />
+          <div className="quiz-collection">
+            <h2 className="questionText">
+              { this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].questionMd }
+            </h2>
+            <div className="questionScore">
+              <span className="time low" id="time">⏰ Sec</span>
+              <span className="time-out" id="time">⏰ Time out</span>
+              <span className="points">🏆 </span>
+            </div>
+           
+            <ul className="questionOptions" >
+              { quizSection }
+            </ul>
+            <button className="nextBtn questionOption moveUp-enter-done" onClick={this.nextQuiz}>
+              <div>Next</div>
+            </button>
           </div>
-          <ul className="questionOptions" >
-            {/* <li className="questionOption"> {{ answersCol }} </li> */}
-          </ul>
-          <button className="nextBtn questionOption moveUp-enter-done" >
-            <div>Next</div>
-          </button>
         </div>
       </> :
         <>
           <div className="quiz-content">
             <img src={this.celebrarityData?.quiz_start_image} alt="alternative" />
-            {/* <img [src]="getroleDetails.quiz_collection[quizIndex].image"> */}
             <div className="content">
               <div className="screen-content">
                 <div className="quiz-start-section">
