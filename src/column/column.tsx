@@ -8,7 +8,9 @@ interface MainState {
   isToggleStartQuiz: boolean,
   celebrarityData: Array<any>,
   quizNumber: number,
-  selectedAnswer: boolean
+  selectedAnswer: boolean,
+  answerIndex: number,
+  selectedAnswerIndex: number
 }
 class Column extends React.Component<{}, MainState> {
   private params: any;
@@ -22,7 +24,9 @@ class Column extends React.Component<{}, MainState> {
       isToggleStartQuiz: false,
       celebrarityData: [],
       quizNumber: 0,
-      selectedAnswer: false
+      selectedAnswer: false,
+      answerIndex: -1,
+      selectedAnswerIndex: -1
     };
     this.getCurrentCelebrityData();
     this.startQuiz = this.startQuiz.bind(this);
@@ -55,6 +59,7 @@ class Column extends React.Component<{}, MainState> {
   }
 
   quizSelected(index:number){
+    this.setState({ selectedAnswerIndex: index });
     this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].answers.forEach((element:any,i:any) => {
       if(index == this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].correctAnswerIdx){
         this.setState({ selectedAnswer: true });
@@ -65,11 +70,7 @@ class Column extends React.Component<{}, MainState> {
   }
 
   render() {
-    const quizSection = this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].answers.map((answer:any,index:any) => {
-      return <li  key={index} onClick={() => this.quizSelected(index)} className = { this.state.selectedAnswer === true ? 'rigth-answer' : 'wrong-answer' }
-      > { answer } 
-      </li>
-    });
+    // const quizSection =
 
     // className="questionOption"
 
@@ -88,8 +89,17 @@ class Column extends React.Component<{}, MainState> {
             </div>
            
             <ul className="questionOptions" >
-              { quizSection }
+              {
+                this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].answers.map((answer: any, index: any) => {
+                return <li key={index} onClick={() => this.quizSelected(index)} 
+                className={`questionOption 
+                ${this.state.selectedAnswer && this.state.selectedAnswerIndex == index ? 'rigth-answer' : null} 
+                ${!this.state.selectedAnswer && this.state.selectedAnswerIndex == index ? 'wrong-answer' : ''}`}
+                > {answer} </li>
+                })
+              }
             </ul>
+
             <button className="nextBtn" onClick={this.nextQuiz}>
               <div>Next</div>
             </button>
