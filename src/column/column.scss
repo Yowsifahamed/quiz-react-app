@@ -70,6 +70,11 @@
         backdrop-filter: blur(30px)
     }
 
+    .quizDisabled{
+        cursor: not-allowed !important;
+        pointer-events: none !important;
+    }
+
     .questionOption {
         font-size: 24px;
         margin: 10px 0;

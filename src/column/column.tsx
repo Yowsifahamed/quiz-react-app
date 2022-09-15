@@ -10,7 +10,8 @@ interface MainState {
   quizNumber: number,
   selectedAnswer: boolean,
   answerIndex: number,
-  selectedAnswerIndex: number
+  selectedAnswerIndex: number,
+  quizEvenSelected: boolean
 }
 class Column extends React.Component<{}, MainState> {
   private params: any;
@@ -26,7 +27,8 @@ class Column extends React.Component<{}, MainState> {
       quizNumber: 0,
       selectedAnswer: false,
       answerIndex: -1,
-      selectedAnswerIndex: -1
+      selectedAnswerIndex: -1,
+      quizEvenSelected: false
     };
     this.getCurrentCelebrityData();
     this.startQuiz = this.startQuiz.bind(this);
@@ -60,6 +62,7 @@ class Column extends React.Component<{}, MainState> {
 
   quizSelected(index:number){
     this.setState({ selectedAnswerIndex: index });
+    this.setState({ quizEvenSelected: true });
     this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].answers.forEach((element:any,i:any) => {
       if(index == this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].correctAnswerIdx){
         this.setState({ selectedAnswer: true });
@@ -70,10 +73,6 @@ class Column extends React.Component<{}, MainState> {
   }
 
   render() {
-    // const quizSection =
-
-    // className="questionOption"
-
     return (
       this.state.isToggleStartQuiz ? <>
         <div className="screen-content">
@@ -93,8 +92,10 @@ class Column extends React.Component<{}, MainState> {
                 this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].answers.map((answer: any, index: any) => {
                 return <li key={index} onClick={() => this.quizSelected(index)} 
                 className={`questionOption 
-                ${this.state.selectedAnswer && this.state.selectedAnswerIndex == index ? 'rigth-answer' : null} 
-                ${!this.state.selectedAnswer && this.state.selectedAnswerIndex == index ? 'wrong-answer' : ''}`}
+                ${this.state.selectedAnswer && this.state.selectedAnswerIndex == index ? 'rigth-answer' : 
+                !this.state.selectedAnswer && this.state.selectedAnswerIndex == index ? 'wrong-answer' : ''}
+                ${ this.state.quizEvenSelected ? 'quizDisabled' : '' }`
+              }
                 > {answer} </li>
                 })
               }
