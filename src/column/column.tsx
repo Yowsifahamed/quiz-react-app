@@ -58,6 +58,8 @@ class Column extends React.Component<{}, MainState> {
     let { quizNumber} = this.state;
     quizNumber++;
     this.setState({ quizNumber: quizNumber });
+    this.setState({ selectedAnswerIndex: -1 });
+    this.setState({ quizEvenSelected: false });
   }
 
   quizSelected(index:number){
