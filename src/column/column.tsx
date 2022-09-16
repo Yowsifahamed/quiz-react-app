@@ -18,6 +18,10 @@ interface MainState {
     secondInterval: any,
     nextButtonEnabled: boolean,
     countingState: boolean
+  },
+  microSeconds:{
+    maxMicroSeconds: number,
+    countMicroSecondIncreamnet: number
   }
 }
 class Column extends React.Component<{}, MainState> {
@@ -42,6 +46,10 @@ class Column extends React.Component<{}, MainState> {
         secondInterval: '',
         nextButtonEnabled: false,
         countingState: false
+      },
+      microSeconds: {
+        maxMicroSeconds : 1000,
+        countMicroSecondIncreamnet: 0
       }
     };
     this.getCurrentCelebrityData();
@@ -67,6 +75,7 @@ class Column extends React.Component<{}, MainState> {
   startQuiz() {
     this.setState({ isToggleStartQuiz: true });
     this.loadSeconds(true);
+    this.loadMicroSeconds(true);
   }
 
   nextQuiz() {
@@ -75,11 +84,14 @@ class Column extends React.Component<{}, MainState> {
     this.setState({ quizNumber: quizNumber });
     this.setState({ selectedAnswerIndex: -1 });
     this.setState({ quizEvenSelected: false });
-    this.loadSeconds(true);
     this.resettingIntervalVarivale();
+    this.loadSeconds(true);
+    this.loadMicroSeconds(true);
   }
 
   quizSelected(index:number){
+    this.loadSeconds(false);
+    this.loadMicroSeconds(false);
     this.setState({ selectedAnswerIndex: index });
     this.setState({ quizEvenSelected: true });
     this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].answers.forEach((element:any,i:any) => {
@@ -92,11 +104,18 @@ class Column extends React.Component<{}, MainState> {
   }
 
   resettingIntervalVarivale(){
+    this.loadSeconds(false);
+    this.loadMicroSeconds(false);
     let loadSeconds  = {...this.state.loadSeconds}
     loadSeconds.maxSeconds = 14;
     loadSeconds.countingState = false;
     loadSeconds.nextButtonEnabled = false;
     this.setState({ loadSeconds });
+
+    let microSeconds  = {...this.state.microSeconds}
+    microSeconds.countMicroSecondIncreamnet = 0;
+    microSeconds.maxMicroSeconds = 1000;
+    this.setState({ microSeconds });
   }
 
   loadSeconds(value:any){
@@ -128,6 +147,33 @@ class Column extends React.Component<{}, MainState> {
     }
   }
 
+  loadMicroSeconds(value:any) {
+    let that = this;
+    let intervalState = value;
+    var microInterval: any;
+     microInterval = setInterval(function () {
+
+      if (that.state.microSeconds.maxMicroSeconds < 1) {
+        intervalState = false;
+        clearInterval(microInterval);
+      }
+
+      if (intervalState) {
+        let microSeconds  = {...that.state.microSeconds}
+        microSeconds.maxMicroSeconds--;
+        that.setState({ microSeconds });
+      }
+    }, 14);
+
+    if (!intervalState) {
+      clearInterval(microInterval);
+      let microSeconds  = {...that.state.microSeconds}
+      microSeconds.countMicroSecondIncreamnet = microSeconds.maxMicroSeconds;
+      microSeconds.maxMicroSeconds = 0;
+      that.setState({ microSeconds });
+    }
+  }
+
   render() {
     return (
       this.state.isToggleStartQuiz ? <>
@@ -139,10 +185,12 @@ class Column extends React.Component<{}, MainState> {
             </h2>
             <div className="questionScore">
               <span className="time low" id="time">⏰ 
-              { this.state.loadSeconds.maxSeconds }  Sec
+              { this.state.quizEvenSelected ? this.state.loadSeconds.countSecondIncreamnet : this.state.loadSeconds.maxSeconds }  Sec
               </span>
               <span className="time-out" id="time">⏰ Time out</span>
-              <span className="points">🏆 </span>
+              <span className="points"> 🏆 
+                <span> { this.state.quizEvenSelected ? this.state.microSeconds.countMicroSecondIncreamnet : this.state.microSeconds.maxMicroSeconds } </span>
+              </span>
             </div>
            
             <ul className="questionOptions" >
