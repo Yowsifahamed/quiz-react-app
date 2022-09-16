@@ -175,6 +175,17 @@ class Column extends React.Component<{}, MainState> {
   }
 
   render() {
+    let timeOutAndIn : any;
+    let loadSeconds  = {...this.state.loadSeconds}
+    if (loadSeconds.maxSeconds !== 0 && loadSeconds.countSecondIncreamnet == 0 || loadSeconds.countSecondIncreamnet > 0) {
+      timeOutAndIn = <span className="time-in" id="time">⏰
+      { this.state.quizEvenSelected ? loadSeconds.countSecondIncreamnet : loadSeconds.maxSeconds }  Sec
+    </span>;
+    }
+
+    if (loadSeconds.maxSeconds == 0 && loadSeconds.countSecondIncreamnet == 0) {
+      timeOutAndIn =  <span className="time-out" id="time">⏰ Time out</span>;
+    }
     return (
       this.state.isToggleStartQuiz ? <>
         <div className="screen-content">
@@ -184,10 +195,7 @@ class Column extends React.Component<{}, MainState> {
               { this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].questionMd }
             </h2>
             <div className="questionScore">
-              <span className="time low" id="time">⏰ 
-              { this.state.quizEvenSelected ? this.state.loadSeconds.countSecondIncreamnet : this.state.loadSeconds.maxSeconds }  Sec
-              </span>
-              <span className="time-out" id="time">⏰ Time out</span>
+              { timeOutAndIn }
               <span className="points"> 🏆 
                 <span> { this.state.quizEvenSelected ? this.state.microSeconds.countMicroSecondIncreamnet : this.state.microSeconds.maxMicroSeconds } </span>
               </span>
