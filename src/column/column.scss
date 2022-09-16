@@ -14,50 +14,42 @@
         -webkit-backdrop-filter: blur(2px);
         backdrop-filter: blur(2px);
         color: #fff;
+        display: inline-block;
     }
     
     .questionScore {
         margin-top: 20px;
-        font-size: 20px;
-        font-family: beRegular;
-        line-height: 35px;
         margin-bottom: 20px;
         position: relative;
+        font-family: "Kanit", sans-serif;
     
-        .time.low {
+        .time-in {
             background-color: #adff2f;
-            // background-color: #c00;
             color: #fff;
             width: 124px;
             font-size: 20px;
-            line-height: 35px;
-            padding: 4px 6px 0;
-            font-family: "Kanit", sans-serif;
+            padding: 4px 6px;
             color: #000;
+            display: inline-block;
         }
     
         .time-out {
-            // background-color: #adff2f;
             background-color: #c00;
             color: #fff;
             width: 124px;
             font-size: 20px;
-            line-height: 35px;
-            padding: 4px 6px 0;
-            font-family: "Kanit", sans-serif;
+            padding: 4px 6px;
             width: 145px;
+            display: inline-block;
         }
     
         .points {
             background-color: #ff0;
             color: #c00;
             min-width: 80px;
-        }
-    
-        span {
+            font-size: 20px;
+            padding: 4px 6px;
             display: inline-block;
-            text-align: left;
-            padding: 4px 6px 0;
         }
     }
 
