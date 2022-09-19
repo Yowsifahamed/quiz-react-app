@@ -12,6 +12,7 @@ interface MainState {
   answerIndex: number,
   selectedAnswerIndex: number,
   quizEvenSelected: boolean,
+  totalMicroScore: number,
   loadSeconds: {
     maxSeconds: number,
     countSecondIncreamnet: number,
@@ -28,6 +29,7 @@ class Column extends React.Component<{}, MainState> {
   private params: any;
   public JSONData = JSONQUIZ.quizCol;
   public celebrarityData: any = [];
+  public getLastQuiz: number = 0;
 
   constructor(props: any) {
     super(props);
@@ -40,6 +42,7 @@ class Column extends React.Component<{}, MainState> {
       answerIndex: -1,
       selectedAnswerIndex: -1,
       quizEvenSelected: false,
+      totalMicroScore: 0,
       loadSeconds: {
         maxSeconds: 14,
         countSecondIncreamnet: 0,
@@ -125,7 +128,9 @@ class Column extends React.Component<{}, MainState> {
       if (that.state.loadSeconds.maxSeconds < 1) {
         intervalState = false;
         clearInterval(that.state.loadSeconds.secondInterval);
-        that.state.loadSeconds.nextButtonEnabled = true;
+        let loadSeconds  = {...that.state.loadSeconds}
+        loadSeconds.nextButtonEnabled = true;
+        that.setState({ loadSeconds });
       }  
 
       if (intervalState) {
@@ -208,16 +213,17 @@ class Column extends React.Component<{}, MainState> {
                 className={`questionOption 
                 ${this.state.selectedAnswer && this.state.selectedAnswerIndex == index ? 'rigth-answer' : 
                 !this.state.selectedAnswer && this.state.selectedAnswerIndex == index ? 'wrong-answer' : ''}
-                ${ this.state.quizEvenSelected ? 'quizDisabled' : '' }`
-              }
-                > {answer} </li>
+                ${ this.state.quizEvenSelected ? 'quizDisabled' : '' }`}> {answer} </li>
                 })
               }
             </ul>
 
-            <button className="nextBtn" onClick={this.nextQuiz}>
-              <div>Next</div>
-            </button>
+            {
+              loadSeconds.nextButtonEnabled && <button className="nextBtn" onClick={this.nextQuiz}>
+                <div>Next</div>
+              </button>
+            }
+    
           </div>
         </div>
       </> :
