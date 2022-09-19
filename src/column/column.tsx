@@ -12,6 +12,7 @@ interface MainState {
   answerIndex: number,
   selectedAnswerIndex: number,
   quizEvenSelected: boolean,
+  scoreBoardEnabled: boolean,
   totalMicroScore: number,
   loadSeconds: {
     maxSeconds: number,
@@ -20,7 +21,7 @@ interface MainState {
     nextButtonEnabled: boolean,
     countingState: boolean
   },
-  microSeconds:{
+  microSeconds: {
     maxMicroSeconds: number,
     countMicroSecondIncreamnet: number
   }
@@ -30,6 +31,8 @@ class Column extends React.Component<{}, MainState> {
   public JSONData = JSONQUIZ.quizCol;
   public celebrarityData: any = [];
   public getLastQuiz: number = 0;
+  public scoreBoardEnabled: boolean = false;
+  public isToggleStartQuiz: boolean = false;
 
   constructor(props: any) {
     super(props);
@@ -43,6 +46,7 @@ class Column extends React.Component<{}, MainState> {
       selectedAnswerIndex: -1,
       quizEvenSelected: false,
       totalMicroScore: 0,
+      scoreBoardEnabled: false,
       loadSeconds: {
         maxSeconds: 14,
         countSecondIncreamnet: 0,
@@ -51,7 +55,7 @@ class Column extends React.Component<{}, MainState> {
         countingState: false
       },
       microSeconds: {
-        maxMicroSeconds : 1000,
+        maxMicroSeconds: 1000,
         countMicroSecondIncreamnet: 0
       }
     };
@@ -69,20 +73,29 @@ class Column extends React.Component<{}, MainState> {
     this.JSONData.forEach(element => {
       if (element.quiz_role == this.params.params.name) {
         this.celebrarityData = element;
-        let { celebrarityData} = this.state;
+        let { celebrarityData } = this.state;
         celebrarityData.push(element);
       }
     })
   }
 
   startQuiz() {
+    this.isToggleStartQuiz = true;
     this.setState({ isToggleStartQuiz: true });
     this.loadSeconds(true);
     this.loadMicroSeconds(true);
   }
 
   nextQuiz() {
-    let { quizNumber} = this.state;
+    let getQuizNumber = this.state.quizNumber;
+    let increasedQuizNumber = getQuizNumber + 1;
+    if (increasedQuizNumber == this.state.celebrarityData[0].quiz_collection.length) {
+      this.scoreBoardEnabled = true;
+      console.log("state",this.state);
+      console.log("scoreBoardEnabled",this.scoreBoardEnabled);
+    }
+
+    let { quizNumber } = this.state;
     quizNumber++;
     this.setState({ quizNumber: quizNumber });
     this.setState({ selectedAnswerIndex: -1 });
@@ -92,49 +105,49 @@ class Column extends React.Component<{}, MainState> {
     this.loadMicroSeconds(true);
   }
 
-  quizSelected(index:number){
+  quizSelected(index: number) {
     this.loadSeconds(false);
     this.loadMicroSeconds(false);
     this.setState({ selectedAnswerIndex: index });
     this.setState({ quizEvenSelected: true });
-    this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].answers.forEach((element:any,i:any) => {
-      if(index == this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].correctAnswerIdx){
+    this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].answers.forEach((element: any, i: any) => {
+      if (index == this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].correctAnswerIdx) {
         this.setState({ selectedAnswer: true });
-      }else{
+      } else {
         this.setState({ selectedAnswer: false });
       }
     });
   }
 
-  resettingIntervalVarivale(){
+  resettingIntervalVarivale() {
     this.loadSeconds(false);
     this.loadMicroSeconds(false);
-    let loadSeconds  = {...this.state.loadSeconds}
+    let loadSeconds = { ...this.state.loadSeconds }
     loadSeconds.maxSeconds = 14;
     loadSeconds.countingState = false;
     loadSeconds.nextButtonEnabled = false;
     this.setState({ loadSeconds });
 
-    let microSeconds  = {...this.state.microSeconds}
+    let microSeconds = { ...this.state.microSeconds }
     microSeconds.countMicroSecondIncreamnet = 0;
     microSeconds.maxMicroSeconds = 1000;
     this.setState({ microSeconds });
   }
 
-  loadSeconds(value:any){
+  loadSeconds(value: any) {
     let that = this;
     let intervalState = value;
     this.state.loadSeconds.secondInterval = setInterval(function () {
       if (that.state.loadSeconds.maxSeconds < 1) {
         intervalState = false;
         clearInterval(that.state.loadSeconds.secondInterval);
-        let loadSeconds  = {...that.state.loadSeconds}
+        let loadSeconds = { ...that.state.loadSeconds }
         loadSeconds.nextButtonEnabled = true;
         that.setState({ loadSeconds });
-      }  
+      }
 
       if (intervalState) {
-        let loadSeconds  = {...that.state.loadSeconds}
+        let loadSeconds = { ...that.state.loadSeconds }
         loadSeconds.maxSeconds--;
         that.setState({ loadSeconds });
       }
@@ -142,7 +155,7 @@ class Column extends React.Component<{}, MainState> {
 
     if (!intervalState) {
       clearInterval(that.state.loadSeconds.secondInterval);
-      let loadSeconds  = {...that.state.loadSeconds}
+      let loadSeconds = { ...that.state.loadSeconds }
       loadSeconds.secondInterval = 0;
       loadSeconds.countSecondIncreamnet = that.state.loadSeconds.maxSeconds;
       loadSeconds.countingState = true;
@@ -152,11 +165,11 @@ class Column extends React.Component<{}, MainState> {
     }
   }
 
-  loadMicroSeconds(value:any) {
+  loadMicroSeconds(value: any) {
     let that = this;
     let intervalState = value;
     var microInterval: any;
-     microInterval = setInterval(function () {
+    microInterval = setInterval(function () {
 
       if (that.state.microSeconds.maxMicroSeconds < 1) {
         intervalState = false;
@@ -164,7 +177,7 @@ class Column extends React.Component<{}, MainState> {
       }
 
       if (intervalState) {
-        let microSeconds  = {...that.state.microSeconds}
+        let microSeconds = { ...that.state.microSeconds }
         microSeconds.maxMicroSeconds--;
         that.setState({ microSeconds });
       }
@@ -172,7 +185,7 @@ class Column extends React.Component<{}, MainState> {
 
     if (!intervalState) {
       clearInterval(microInterval);
-      let microSeconds  = {...that.state.microSeconds}
+      let microSeconds = { ...that.state.microSeconds }
       microSeconds.countMicroSecondIncreamnet = microSeconds.maxMicroSeconds;
       microSeconds.maxMicroSeconds = 0;
       that.setState({ microSeconds });
@@ -180,140 +193,110 @@ class Column extends React.Component<{}, MainState> {
   }
 
   render() {
-    let timeOutAndIn : any;
-    let loadSeconds  = {...this.state.loadSeconds}
+    let timeOutAndIn: any;
+    let loadSeconds = { ...this.state.loadSeconds }
     if (loadSeconds.maxSeconds !== 0 && loadSeconds.countSecondIncreamnet == 0 || loadSeconds.countSecondIncreamnet > 0) {
       timeOutAndIn = <span className="time-in" id="time">⏰
-      { this.state.quizEvenSelected ? loadSeconds.countSecondIncreamnet : loadSeconds.maxSeconds }  Sec
-    </span>;
+        {this.state.quizEvenSelected ? loadSeconds.countSecondIncreamnet : loadSeconds.maxSeconds}  Sec
+      </span>;
     }
 
     if (loadSeconds.maxSeconds == 0 && loadSeconds.countSecondIncreamnet == 0) {
-      timeOutAndIn =  <span className="time-out" id="time">⏰ Time out</span>;
+      timeOutAndIn = <span className="time-out" id="time">⏰ Time out</span>;
     }
-    return (
-      this.state.isToggleStartQuiz ? <>
-        <div className="screen-content">
-        <img src={this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].image} alt="alternative" />
-          <div className="quiz-collection">
-            <h2 className="questionText">
-              { this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].questionMd }
-            </h2>
-            <div className="questionScore">
-              { timeOutAndIn }
-              <span className="points"> 🏆 
-                <span> { this.state.quizEvenSelected ? this.state.microSeconds.countMicroSecondIncreamnet : this.state.microSeconds.maxMicroSeconds } </span>
-              </span>
-            </div>
-           
-            <ul className="questionOptions" >
-              {
-                this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].answers.map((answer: any, index: any) => {
-                return <li key={index} onClick={() => this.quizSelected(index)} 
-                className={`questionOption 
-                ${this.state.selectedAnswer && this.state.selectedAnswerIndex == index ? 'rigth-answer' : 
-                !this.state.selectedAnswer && this.state.selectedAnswerIndex == index ? 'wrong-answer' : ''}
-                ${ this.state.quizEvenSelected ? 'quizDisabled' : '' }`}> {answer} </li>
-                })
-              }
-            </ul>
 
-            {
-              loadSeconds.nextButtonEnabled && <button className="nextBtn" onClick={this.nextQuiz}>
-                <div>Next</div>
-              </button>
-            }
-    
+    let quizSection = <div className="screen-content">
+      <img src={this.state.celebrarityData[0].quiz_collection[this.state.quizNumber]?.image} alt="alternative" />
+      <div className="quiz-collection">
+        <h2 className="questionText">
+          {this.state.celebrarityData[0].quiz_collection[this.state.quizNumber]?.questionMd}
+        </h2>
+        <div className="questionScore">
+          {timeOutAndIn}
+          <span className="points"> 🏆
+            <span> {this.state.quizEvenSelected ? this.state.microSeconds.countMicroSecondIncreamnet : this.state.microSeconds.maxMicroSeconds} </span>
+          </span>
+        </div>
+
+        <ul className="questionOptions" >
+          {
+            this.state.celebrarityData[0]?.quiz_collection[this.state.quizNumber]?.answers.map((answer: any, index: any) => {
+              return <li key={index} onClick={() => this.quizSelected(index)}
+                className={`questionOption 
+            ${this.state.selectedAnswer && this.state.selectedAnswerIndex == index ? 'rigth-answer' :
+                    !this.state.selectedAnswer && this.state.selectedAnswerIndex == index ? 'wrong-answer' : ''}
+            ${this.state.quizEvenSelected ? 'quizDisabled' : ''}`}> {answer} </li>
+            })
+          }
+        </ul>
+
+        {
+          loadSeconds.nextButtonEnabled && <button className="nextBtn" onClick={this.nextQuiz}>
+            <div>Next</div>
+          </button>
+        }
+
+      </div>
+    </div>
+
+    let startQuizContent = <div className="quiz-content">
+      <img src={this.celebrarityData?.quiz_start_image} alt="alternative" />
+      <div className="content">
+        <div className="screen-content">
+          <div className="quiz-start-section">
+            <h1 className="quizTitle">The Toughest <span className="ronaldo">Cristiano Ronaldo</span> Quiz!</h1>
+            <h2 className="quizTagline">Everyone loves Ronaldo! But can you outscore #CR7 fans in this quiz?</h2>
+            <button className="startBtn" onClick={this.startQuiz}>Start the Quiz</button>
           </div>
         </div>
-      </> :
-        <>
-          <div className="quiz-content">
-            <img src={this.celebrarityData?.quiz_start_image} alt="alternative" />
-            <div className="content">
-              <div className="screen-content">
-                <div className="quiz-start-section">
-                  <h1 className="quizTitle">The Toughest <span className="ronaldo">Cristiano Ronaldo</span> Quiz!</h1>
-                  <h2 className="quizTagline">Everyone loves Ronaldo! But can you outscore #CR7 fans in this quiz?</h2>
-                  <button className="startBtn" onClick={this.startQuiz}>Start the Quiz</button>
-                </div>
-              </div>
-            </div>
+      </div>
+    </div>;
+
+    let scoreSection = <div className="score-content">
+      {/* <img  alt="test"> */}
+      <div className="quiz-complete">
+        <div className="quiz-score">
+          <div className="score-text">
+            <h3>🏆 Your score</h3>
           </div>
-        </>
+          <div className="score-points">
+            {/* <h3 class="numberscore"> {{ totalScore }}</h3> */}
+          </div>
+        </div>
+        <div className="quiz-reasult">
+          <div className="reasult">
+            <h3>You got 5 OUT OF  20 RIGHT! </h3>
+          </div>
+          <div className="challage-reasult">
+            🎯 Challenge: Can you get 8/20 right?
+          </div>
+        </div>
+        <div className="more-quiz">
+          <p> Share your result: </p>
+          <button className="retake-quiz-btn" id="retakeQuiz" title="⟲ Retake Quiz"> ⟲ Retake Quiz
+          </button>
+          <button className="more-quiz-btn" id="moreQuiz" title="More Quizzes >"> More Quizzes </button>
+        </div>
+      </div>
+    </div>
+
+    let quizConentSection;
+    if ( !this.isToggleStartQuiz && !this.scoreBoardEnabled) {
+      return quizConentSection = startQuizContent;
+    }else if(this.isToggleStartQuiz && !this.scoreBoardEnabled){
+      return quizConentSection = quizSection;
+    }else if(this.scoreBoardEnabled){
+      return quizConentSection = scoreSection;
+    }
+
+    return (
+      <>
+      { quizConentSection }
+        {/* { this.scoreBoardEnabled && scoreSection}
+        { this.isToggleStartQuiz && !this.scoreBoardEnabled && quizSection}
+        { !this.isToggleStartQuiz && !this.scoreBoardEnabled && startQuizContent} */}
+      </>
     )
-
-    // if (this.quizEnabled) {
-    //   console.log("true")
-    //   return <>
-    //      <div className="quiz-collection">
-    //       <h2 className="questionText">
-    //         {/* {{ getroleDetails.quiz_collection[quizIndex].questionMd }} */}
-    //       </h2>
-    //       <div className="questionScore">
-
-    //         <span className="time low" id="time">⏰ Sec</span>
-
-    //         <span className="time-out" id="time">⏰ Time out</span>
-    //         <span className="points">🏆 </span>
-    //       </div>
-    //       <ul className="questionOptions" >
-    //         {/* <li className="questionOption"> {{ answersCol }} </li> */}
-    //       </ul>
-    //       <button className="nextBtn questionOption moveUp-enter-done" >
-    //         <div>Next</div>
-    //       </button>
-    //     </div>
-    //   </>
-    // } else {
-    //   return <>
-    //     <div className="quiz-content">
-    //       <img src={this.celebrarityData?.quiz_start_image} alt="alternative" />
-    //       {/* <img [src]="getroleDetails.quiz_collection[quizIndex].image"> */}
-    //       <div className="content">
-    //         <div className="screen-content">
-    //           <div className="quiz-start-section">
-    //             <h1 className="quizTitle">The Toughest <span className="ronaldo">Cristiano Ronaldo</span> Quiz!</h1>
-    //             <h2 className="quizTagline">Everyone loves Ronaldo! But can you outscore #CR7 fans in this quiz?</h2>
-    //             <button className="startBtn" onClick={this.startQuiz}>Start the Quiz</button>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </>
-    // }
-
-    // if (this.scorePageEnabled) {
-    //   return <>
-    //     <div className="score-content">
-    //       {/* <img  alt="test"> */}
-    //       <div className="quiz-complete">
-    //         <div className="quiz-score">
-    //           <div className="score-text">
-    //             <h3>🏆 Your score</h3>
-    //           </div>
-    //           <div className="score-points">
-    //             {/* <h3 class="numberscore"> {{ totalScore }}</h3> */}
-    //           </div>
-    //         </div>
-    //         <div className="quiz-reasult">
-    //           <div className="reasult">
-    //             <h3>You got 5 OUT OF  20 RIGHT! </h3>
-    //           </div>
-    //           <div className="challage-reasult">
-    //             🎯 Challenge: Can you get 8/20 right?
-    //           </div>
-    //         </div>
-    //         <div className="more-quiz">
-    //           <p> Share your result: </p>
-    //           <button className="retake-quiz-btn" id="retakeQuiz" title="⟲ Retake Quiz"> ⟲ Retake Quiz
-    //           </button>
-    //           <button className="more-quiz-btn" id="moreQuiz" title="More Quizzes >"> More Quizzes </button>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </>
-    // }
   }
 }
 
