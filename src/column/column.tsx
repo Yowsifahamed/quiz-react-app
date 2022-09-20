@@ -127,6 +127,7 @@ class Column extends React.Component<{}, MainState> {
     this.loadMicroSeconds(false);
     let loadSeconds = { ...this.state.loadSeconds }
     loadSeconds.maxSeconds = 14;
+    loadSeconds.countSecondIncreamnet = 0;
     loadSeconds.countingState = false;
     loadSeconds.nextButtonEnabled = false;
     this.setState({ loadSeconds });
@@ -232,7 +233,7 @@ class Column extends React.Component<{}, MainState> {
                 className={`questionOption 
             ${this.state.selectedAnswer && this.state.selectedAnswerIndex == index ? 'rigth-answer' :
                     !this.state.selectedAnswer && this.state.selectedAnswerIndex == index ? 'wrong-answer' : ''}
-            ${this.state.quizEvenSelected ? 'quizDisabled' : ''}`}> {answer} </li>
+            ${ loadSeconds.nextButtonEnabled ? 'quizDisabled' : ''}`}> {answer} </li>
             })
           }
         </ul>
