@@ -63,6 +63,7 @@ class Column extends React.Component<{}, MainState> {
     this.getCurrentCelebrityData();
     this.startQuiz = this.startQuiz.bind(this);
     this.nextQuiz = this.nextQuiz.bind(this);
+    this.retakeQuiz = this.retakeQuiz.bind(this);
   }
 
   componentDidUpdate = () => {
@@ -194,6 +195,10 @@ class Column extends React.Component<{}, MainState> {
     }
   }
 
+  retakeQuiz(){
+    window.location.reload();
+  }
+
   render() {
     let timeOutAndIn: any;
     let loadSeconds = { ...this.state.loadSeconds }
@@ -275,7 +280,7 @@ class Column extends React.Component<{}, MainState> {
         </div>
         <div className="more-quiz">
           <p> Share your result: </p>
-          <button className="retake-quiz-btn" id="retakeQuiz" title="⟲ Retake Quiz"> ⟲ Retake Quiz
+          <button className="retake-quiz-btn" id="retakeQuiz" title="⟲ Retake Quiz"  onClick={this.retakeQuiz}>  ⟲ Retake Quiz 
           </button>
           <button className="more-quiz-btn" id="moreQuiz" title="More Quizzes >"> More Quizzes </button>
         </div>
