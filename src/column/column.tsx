@@ -252,7 +252,7 @@ class Column extends React.Component<{}, MainState> {
       <div className="content">
         <div className="screen-content">
           <div className="quiz-start-section">
-            <h1 className="quizTitle">The Toughest <span className="ronaldo">Cristiano Ronaldo</span> Quiz!</h1>
+            <h1 className="quizTitle">The Toughest <span className="ronaldo"> { this.params.params.name } </span> Quiz!</h1>
             <h2 className="quizTagline">Everyone loves Ronaldo! But can you outscore #CR7 fans in this quiz?</h2>
             <button className="startBtn" onClick={this.startQuiz}>Start the Quiz</button>
           </div>

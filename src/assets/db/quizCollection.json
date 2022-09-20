@@ -259,15 +259,456 @@
             "type": "entertainment",
             "quiz_role": "bruno_mars",
             "quiz_start_image": "https://i.imgur.com/1BRHMcG.jpg",
-            "quiz_collection": []
+            "quiz_collection": [
+                {
+                    "questionMd": "*True or False*: **\"Money Make Her Smile\"** was a track featured in Mars' album **Doo-Wops & Hooligans**",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "f83255cdaf9a76baa2d2b3148000632414d08757",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/3szlzsQ.gif"
+                },
+                {
+                    "questionMd": "In which song does Mars sing: *\"You got your legs up in the sky, with the devil in your eyes, let me hear you say you want it all\"*?",
+                    "answers": [
+                        "Runaway Baby",
+                        "Our First Time",
+                        "Young Girls",
+                        "Gorilla"
+                    ],
+                    "type": "SONG_BY_LYRICS",
+                    "id": "c8b0135e8689b32d410bef29b557e7bf3b160640",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/9PTZ7vr.gif"
+                },
+                {
+                    "questionMd": "Which instrument is played by Mars in his music band apart from being lead vocalist?",
+                    "answers": [
+                        "Drums",
+                        "Saxophone",
+                        "Guitar",
+                        "Keyboard"
+                    ],
+                    "type": "GENERAL",
+                    "id": "e6a1455239a88302b435b77d4698d4de5b5aa6aa",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/VTdrAtQ.jpg"
+                },
+                {
+                    "questionMd": "What is the opening track of Mars' album **Doo-Wops & Hooligans**?",
+                    "answers": [
+                        "Grenade",
+                        "Just the Way You Are",
+                        "The Lazy Song",
+                        "Marry You"
+                    ],
+                    "type": "GENERAL",
+                    "id": "3c023d1a35d0c9770e3fc66b8a0f92d338db50ae",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/EAqGCnV.jpg"
+                },
+                {
+                    "questionMd": "Guess the music video  \n![](https://i.imgur.com/9PTZ7vr.gif)",
+                    "answers": [
+                        "Gorilla",
+                        "The Lazy Song",
+                        "Uptown Funk",
+                        "24K Magic"
+                    ],
+                    "type": "VIDEO_BY_IMAGE",
+                    "id": "3d3f81ce5e0da7e832b97e38ce5dca6d80e9050a",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/HnQhAe9.jpg"
+                },
+                {
+                    "questionMd": "Which Mars' song won the **Song of the Year** Grammy Award in 2018?",
+                    "answers": [
+                        "Chunky",
+                        "That's What I Like",
+                        "Finesse",
+                        "24K Magic"
+                    ],
+                    "type": "GENERAL",
+                    "id": "c5d397c95e1049655d2e17ca7195d2a1281de846",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/mJ0k5rz.gif"
+                },
+                {
+                    "questionMd": "Which Mars' song can be heard from strippers' changing room in the opening scene of **Gorilla** music video?\"",
+                    "answers": [
+                        "Treasure",
+                        "Money Make Her Smile",
+                        "Moonshine",
+                        "Grenade"
+                    ],
+                    "type": "GENERAL",
+                    "id": "5f6c455e143b323adbe2881ab6dc0636ac6d0d3e",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/6QhdVvl.jpg"
+                },
+                {
+                    "questionMd": "*True or False*: Mars appeared in Time magazine's list of the 100 most influential people in the world in 2011",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "2fc1bc0b9abcd17e201e17e50def58ace91cee75",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/meUNiZX.jpg"
+                },
+                {
+                    "questionMd": "In which song does Mars sing: *\"You're everything I see in my dreams. I wouldn't say that to you if it wasn't true\"*?",
+                    "answers": [
+                        "Just the Way You Are",
+                        "Gorilla",
+                        "Natalie",
+                        "Treasure"
+                    ],
+                    "type": "SONG_BY_LYRICS",
+                    "id": "6d04a94f2be34c79c7356c5dcad2084cbfd3daa0",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/G7WcefX.jpg"
+                },
+                {
+                    "questionMd": "Guess the music video  \n![](https://i.imgur.com/rLSkdVj.gif)",
+                    "answers": [
+                        "When I Was Your Man",
+                        "That's What I Like",
+                        "Just the Way You Are",
+                        "It Will Rain"
+                    ],
+                    "type": "VIDEO_BY_IMAGE",
+                    "id": "1dd8e16ea1ffb8615515e250342518f2f0f4d617",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/I1GbkCP.jpg"
+                },
+                {
+                    "questionMd": "In which song does Mars sing: *\"Same bed but it feels just a little bit bigger now. Our song on the radio but it don't sound the same\"*?",
+                    "answers": [
+                        "When I Was Your Man",
+                        "It Will Rain",
+                        "Too Good to Say Goodbye",
+                        "Runaway Baby"
+                    ],
+                    "type": "SONG_BY_LYRICS",
+                    "id": "2ac41e74f31a221b42431a2388a8e2f2bf001cd0",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/Q1ZypiB.jpg"
+                },
+                {
+                    "questionMd": "When is Mars' birthday?",
+                    "answers": [
+                        "October 8, 1985",
+                        "October 10, 1984",
+                        "October 9, 1986",
+                        "October 11, 1984"
+                    ],
+                    "type": "GENERAL",
+                    "id": "e1a22af68757c13fbf6b2d08b056f04f9cc8a996",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/E19LznZ.gif"
+                },
+                {
+                    "questionMd": "*True or False*: Mars' single **\"It Will Rain\"** was the lead soundtrack of **The Twilight Saga: Eclipse**",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "8ce8cd77be8790e1b81dc45588f307b77b58b7f7",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/aY26asD.jpg"
+                },
+                {
+                    "questionMd": "What is Mars' official Twitter handle?",
+                    "answers": [
+                        "@BrunoMars",
+                        "@MarsBruno",
+                        "@RealBruno",
+                        "@BrunoMarsOfficial"
+                    ],
+                    "type": "GENERAL",
+                    "id": "bd158f85274a82c8af6684292ef20b6ed6020621",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/0E23j3k.jpg"
+                },
+                {
+                    "questionMd": "Guess the music video  \n![](https://i.imgur.com/mJ0k5rz.gif)",
+                    "answers": [
+                        "24K Magic",
+                        "Gorilla",
+                        "Finesse",
+                        "Grenade"
+                    ],
+                    "type": "VIDEO_BY_IMAGE",
+                    "id": "78c175ea895644a6827aa882d141a47dbde18f8a",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/rLSkdVj.gif"
+                },
+                {
+                    "questionMd": "Guess the music video  \n![](https://i.imgur.com/E19LznZ.gif)",
+                    "answers": [
+                        "24K Magic",
+                        "Locked Out of Heaven",
+                        "Uptown Funk",
+                        "Finesse"
+                    ],
+                    "type": "VIDEO_BY_IMAGE",
+                    "id": "d6707694ff9b5f4de8cffd5b6b882f736727aedf",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/QyUQEyq.jpg"
+                },
+                {
+                    "questionMd": "*True or False*: Mars urinated himself during a performance of Elvis' \"Can't Help Falling in Love\" when he was five",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "8d64267c42a3910b1bcea60d66226e8e2f64520d",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/VTdrAtQ.jpg"
+                },
+                {
+                    "questionMd": "In which song does Mars sing: *\"I might mess around and get my college degree. I bet my old man will be so proud of me\"*?",
+                    "answers": [
+                        "Calling All My Lovelies",
+                        "The Lazy Song",
+                        "That's What I Like",
+                        "Count On Me"
+                    ],
+                    "type": "SONG_BY_LYRICS",
+                    "id": "1bbc317278cf03fa1fcd3238dc04769b751707d0",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/meUNiZX.jpg"
+                },
+                {
+                    "questionMd": "*True or False*: **\"Versace on the Floor\"** was a track featured in Mars' album **Unorthodox Jukebox**",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "ef02e62d32f6451401d90ab79881530af370b1f7",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/6QhdVvl.jpg"
+                },
+                {
+                    "questionMd": "What is Mars' real name?",
+                    "answers": [
+                        "Bruno Martinez",
+                        "Roger Williams",
+                        "Peter Hernandez",
+                        "Leo Martinez"
+                    ],
+                    "type": "GENERAL",
+                    "id": "fc6ad8be3e2ccfe4e10cb1a48bfecf99407691de",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/HnQhAe9.jpg"
+                },
+                {
+                    "questionMd": "Guess the music video  \n![](https://i.imgur.com/3szlzsQ.gif)",
+                    "answers": [
+                        "Just the Way You Are",
+                        "That's What I Like",
+                        "Grenade",
+                        "It Will Rain"
+                    ],
+                    "type": "VIDEO_BY_IMAGE",
+                    "id": "90469e5fd10f8b7690c45325678595a8eb5085e1",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/EAqGCnV.jpg"
+                },
+                {
+                    "questionMd": "What is the name of Mars' music band?",
+                    "answers": [
+                        "Flaming Lips",
+                        "The Hooligans",
+                        "Dark Floyd",
+                        "Smashing Pumpkins"
+                    ],
+                    "type": "GENERAL",
+                    "id": "8c008a63ec0d64045fe0e0a4fc9e4f33711f8592",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/VTdrAtQ.jpg"
+                },
+                {
+                    "questionMd": "Where is Mars originally from?",
+                    "answers": [
+                        "Miami, Florida",
+                        "Chicago, Illinois",
+                        "Honolulu, Hawaii",
+                        "Boston, Massachusetts"
+                    ],
+                    "type": "GENERAL",
+                    "id": "850638209fa3d4f7514903fa54f059bd6cc7426a",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/0E23j3k.jpg"
+                },
+                {
+                    "questionMd": "In which song does Mars sing: *\"Oh, it's not complicated, so this won't take a while, you see, music make her dance\"*?",
+                    "answers": [
+                        "Money Make Her Smile",
+                        "Natalie",
+                        "Young Girls",
+                        "Just the Way You Are"
+                    ],
+                    "type": "SONG_BY_LYRICS",
+                    "id": "eaed290d31df600f3d61c6530f24f2daa4c38f1c",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/QyUQEyq.jpg"
+                },
+                {
+                    "questionMd": "Mars got his nickname 'Bruno' as resemblance to whom?",
+                    "answers": [
+                        "Bruno Walter",
+                        "Bruno Kreisky",
+                        "Bruno Munari",
+                        "Bruno Sammartino"
+                    ],
+                    "type": "GENERAL",
+                    "id": "550ddd4407bbe7ac4913f0b4f54ccabaad37fe81",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/meUNiZX.jpg"
+                }
+            ]
         },
         {
             "col": "https://i.imgur.com/9kKznp7l.png",
             "name": "🎬 entertainment",
             "type": "entertainment",
-            "quiz_role": "jackson",
+            "quiz_role": "bts-jungkook",
             "quiz_start_image": "https://i.imgur.com/1BRHMcG.jpg",
-            "quiz_collection": []
+            "quiz_collection": [
+                {
+                    "questionMd": "Which **Justin Beiber** song has Jungkook covered?",
+                    "answers": [
+                        "Somebody To Love",
+                        "Baby",
+                        "Boyfriend",
+                        "Purpose"
+                    ],
+                    "type": "GENERAL",
+                    "id": "e34d73e5f4a869d50a4cdc430bc200b27650e9df",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/rv1QHgx.jpg"
+                },
+                {
+                    "questionMd": "*True or False*: Jungkook was the most searched K-pop artist on YouTube in both 2019 and 2020",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "a2b6c671e59ff0756e6e89d72fdd7e7c2f414b61",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/VXgDVfT.jpg"
+                },
+                {
+                    "questionMd": "Where is Jungkook's official Instagram ID?",
+                    "answers": [
+                        "jungkookie",
+                        "bts.jungkook",
+                        "jung.kook",
+                        "jungkook.official"
+                    ],
+                    "type": "GENERAL",
+                    "id": "7eba1c951860f4a8ae799e21971a1770db9bfb1f",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/VXgDVfT.jpg"
+                },
+                {
+                    "questionMd": "Who would Jungkook love to sing a duet with?",
+                    "answers": [
+                        "Jennie",
+                        "Jung Eun-ji",
+                        "Hwasa",
+                        "IU"
+                    ],
+                    "type": "GENERAL",
+                    "id": "fdd742c36e038963e93f68df0d5fcafe1a4c44dd",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/yLk4HlI.jpg"
+                },
+                {
+                    "questionMd": "When is Jungkook's birthday?",
+                    "answers": [
+                        "September 1, 1996",
+                        "September 1, 1997",
+                        "October 1, 1997",
+                        "October 5, 1996"
+                    ],
+                    "type": "GENERAL",
+                    "id": "e731c58d335ba8c7acb3b119a6f34ec7cf1b60b8",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/VXgDVfT.jpg"
+                },
+                {
+                    "questionMd": "*True or False*: Jungkook's blood group is **AB**",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "dab8b6bb229508481f4e7116d16cd8d7cd8769af",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/qBxi3iT.jpg"
+                },
+                {
+                    "questionMd": "What is Jungkook's nickname?",
+                    "answers": [
+                        "Bon Bon",
+                        "Honey",
+                        "Puppy",
+                        "Bunny"
+                    ],
+                    "type": "GENERAL",
+                    "id": "0c481383cab6dbdd46dd90de600249f94c17b3f2",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/0Gm3YD3.jpg"
+                },
+                {
+                    "questionMd": "*True or False*: Jungkook covered **Justin Beiber** song *\"Nothing Like Us\"*",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "789cf1b821d436f2d553fef5d248f259d6d2400d",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/wcpwQ15.jpg"
+                },
+                {
+                    "questionMd": "What is Jungkook's zodiac sign?",
+                    "answers": [
+                        "Gemini",
+                        "Leo",
+                        "Virgo",
+                        "Cancer"
+                    ],
+                    "type": "GENERAL",
+                    "id": "e708891a838d0ee8188b8b204822a3b4c2878a8d",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/rv1QHgx.jpg"
+                },
+                {
+                    "questionMd": "What was Jungkook's aspiration as a child?",
+                    "answers": [
+                        "To be an actor",
+                        "To be a doctor",
+                        "To be a singer",
+                        "To be a badminton player"
+                    ],
+                    "type": "GENERAL",
+                    "id": "ea8aaf5552b50ea394c14068955c8e215f786114",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/VXgDVfT.jpg"
+                }
+            ]
         },
         {
             "col": "https://i.imgur.com/3ICzrlYl.png",
