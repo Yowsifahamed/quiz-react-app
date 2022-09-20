@@ -5,6 +5,7 @@
             "name": "⚽ sports",
             "type": "sports",
             "quiz_role": "cristiano-ronaldo",
+            "quiz_front_text": "Everyone loves Ronaldo! But can you outscore #CR7 fans in this quiz?",
             "quiz_start_image": "https://i.imgur.com/1BRHMcG.jpg",
             "quiz_collection": [
                 {
@@ -258,6 +259,7 @@
             "name": "🎬 entertainment",
             "type": "entertainment",
             "quiz_role": "bruno_mars",
+            "quiz_front_text": "How well do you know the pop icon Bruno Mars? This quiz is strictly for Mars' fans!",
             "quiz_start_image": "https://i.imgur.com/1BRHMcG.jpg",
             "quiz_collection": [
                 {
@@ -582,6 +584,7 @@
             "name": "🎬 entertainment",
             "type": "entertainment",
             "quiz_role": "bts-jungkook",
+            "quiz_front_text": "Is Jungkook your BTS fave? Of course, he is sweet as a cookie!",
             "quiz_start_image": "https://i.imgur.com/1BRHMcG.jpg",
             "quiz_collection": [
                 {
@@ -715,6 +718,7 @@
             "name": "⚽ sports",
             "type": "entertainment",
             "quiz_role": "kumar-sangakkara",
+            "quiz_front_text": "You think you know all about Sri Lankan Cricketing Legend? You are not a true fan unless you score 20/20!",
             "quiz_start_image": "https://i.imgur.com/GNnpAWb.jpg",
             "quiz_collection": [
                 {
@@ -971,6 +975,7 @@
             "name": "🎬 entertainment",
             "type": "entertainment",
             "quiz_role": "lee-min-ho",
+            "quiz_front_text": "Only true fans of Lee can score 20/20 in this quiz! Take the quiz to prove it!",
             "quiz_start_image": "https://i.imgur.com/1BRHMcG.jpg",
             "quiz_collection": [
                 {
@@ -1232,6 +1237,7 @@
             "name": "⚽ sports",
             "type": "entertainment",
             "quiz_role": "rafael-nadal",
+            "quiz_front_text": "How well do you know King of Clay? This quiz is a must take for tennis fans!",
             "quiz_start_image": "https://i.imgur.com/qWi5stW.jpg",
             "quiz_collection": [
                 {
@@ -1491,6 +1497,7 @@
             "name": "⚽ sports",
             "type": "entertainment",
             "quiz_role": "lionel-messi",
+            "quiz_front_text": "How well do you know the Argentina and Barcelona soccer superstar? Take this quiz and prove your fandom!",
             "quiz_start_image": "https://i.imgur.com/x6fDntd.jpg",
             "quiz_collection": [
                 {
@@ -1748,6 +1755,7 @@
             "name": "🎬 entertainment",
             "type": "entertainment",
             "quiz_role": "shah-rukh-khan",
+            "quiz_front_text": "Only die-hard SRK fans can score full marks in this quiz! Are you one of them?",
             "quiz_start_image": "https://i.imgur.com/MUIJglz.jpg",
             "quiz_collection": [
                 {
@@ -2074,6 +2082,7 @@
             "name": "🎬 entertainment",
             "type": "entertainment",
             "quiz_role": "michael-jackson",
+            "quiz_front_text": "How well you know the Legendary King of Pop? Take the quiz to find out",
             "quiz_start_image": "https://i.imgur.com/CBoOtM3.jpg",
             "quiz_collection": [
                 {
