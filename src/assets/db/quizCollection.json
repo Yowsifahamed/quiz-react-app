@@ -1747,17 +1747,653 @@
             "col": "https://i.imgur.com/harVFCSl.png",
             "name": "🎬 entertainment",
             "type": "entertainment",
-            "quiz_role": "sanga",
-            "quiz_start_image": "https://i.imgur.com/1BRHMcG.jpg",
-            "quiz_collection": []
+            "quiz_role": "shah-rukh-khan",
+            "quiz_start_image": "https://i.imgur.com/MUIJglz.jpg",
+            "quiz_collection": [
+                {
+                    "questionMd": "What is the character played by Shah Rukh Khan in **My Name Is Khan**?",
+                    "answers": [
+                        "Rizvan Khan",
+                        "Samar Anand",
+                        "Shahrukh Khan",
+                        "Gopal"
+                    ],
+                    "type": "CHARACTER_BY_MOVIE",
+                    "id": "536e75220b7790ac6b23fc42aec5f950ab41a980",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/Xy3VFZo.jpg"
+                },
+                {
+                    "questionMd": "*True or False*: SRK currently holds record of longest running movie of Indian Cinema",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "ead87b126e696eafa334bdeea8ffa9a43840cebf",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/v6BWGQW.jpg"
+                },
+                {
+                    "questionMd": "What is the character played by Shah Rukh Khan in **Zero**?",
+                    "answers": [
+                        "Amarkanth Varma",
+                        "Bauua Singh",
+                        "Ajay Bakshi",
+                        "Raj Mathur"
+                    ],
+                    "type": "CHARACTER_BY_MOVIE",
+                    "id": "dd6c8b2cbbd637a8c26f2fd5d7e789d708e69172",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/nVVdGC1.gif"
+                },
+                {
+                    "questionMd": "In which movie the song **Chammak Chalo** was featured?",
+                    "answers": [
+                        "Dilwale",
+                        "Ra.One",
+                        "Don 2",
+                        "Fan"
+                    ],
+                    "type": "MOVIE_BY_SONG",
+                    "id": "260a0c7f8a5e02cdb953b3f688c8aeff76112189",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/wir06Ys.jpg"
+                },
+                {
+                    "questionMd": "What is Shah Rukh Khan's favorite food?",
+                    "answers": [
+                        "Chicken Biriyani",
+                        "Tandoori Chicken",
+                        "Chocolate Ice Cream",
+                        "Chicken Pizza"
+                    ],
+                    "type": "GENERAL",
+                    "id": "b5a264514f85668db321a2c870610ba040608bf9",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/aFNaG4Z.jpg"
+                },
+                {
+                    "questionMd": "What is IPL team co-owned by Shah Rukh Khan?",
+                    "answers": [
+                        "Mumbai Indians",
+                        "Chennai Super Kings",
+                        "Sunrisers Hyderabad",
+                        "Kolkata Knight Riders"
+                    ],
+                    "type": "GENERAL",
+                    "id": "b12060228ffae322f106d43cb11ffeb149d1a7ff",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/2fsjUQJ.jpg"
+                },
+                {
+                    "questionMd": "Which year was Shah Rukh Khan born?",
+                    "answers": [
+                        "1965",
+                        "1963",
+                        "1968",
+                        "1969"
+                    ],
+                    "type": "GENERAL",
+                    "id": "3d761ab1f0b79d7ec9fe118f3dc7ba38db5feb69",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/AMbM5Cf.jpg"
+                },
+                {
+                    "questionMd": "In which movie the song **Maahi Ve** was featured?",
+                    "answers": [
+                        "Kuch Kuch Hota Hai",
+                        "Chalte Chalte",
+                        "Kabhi Khushi Kabhie Gham",
+                        "Kal Ho Naa Ho"
+                    ],
+                    "type": "MOVIE_BY_SONG",
+                    "id": "cb018a29fe9f63f14ede58aafad723ec9d38f978",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/syzbb3w.jpg"
+                },
+                {
+                    "questionMd": "*True or False*: SRK donated all the prize money KKR won in 2014 to the childrens hospital in Kolkata and Mumbai",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "9c092bfbe8db2be80382d281594ff2341532ae39",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/zfXVh6Y.gif"
+                },
+                {
+                    "questionMd": "In which movie the song **Koi Mil Gaya** was featured?",
+                    "answers": [
+                        "Dilwale Dulhania Le Jayenge",
+                        "Kabhi Khushi Kabhie Gham",
+                        "Kuch Kuch Hota Hai",
+                        "Hum Tumhare Hain Sanam"
+                    ],
+                    "type": "MOVIE_BY_SONG",
+                    "id": "daf2d2d10bb69d6f5f402eef2bcfb1aa29da3324",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/Pj5EVFf.jpg"
+                },
+                {
+                    "questionMd": "What is Shah Rukh Khan's daughter's first name?",
+                    "answers": [
+                        "Suhana",
+                        "Rehana",
+                        "Mumtaz",
+                        "Gauri"
+                    ],
+                    "type": "GENERAL",
+                    "id": "485de49ad7752c7e971b12101f120893d1f9bce2",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/EbmIw0L.jpg"
+                },
+                {
+                    "questionMd": "*True or False*: Character played by SRK dies in the movie **Veer-Zaara**",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "41438a36be9be1d28345cebeb2f5080873f20b73",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/yRvOoVA.jpg"
+                },
+                {
+                    "questionMd": "Guess the movie  \n![](https://i.imgur.com/xstfrEq.gif)",
+                    "answers": [
+                        "Chennai Express",
+                        "Chak De! India",
+                        "Paheli",
+                        "Dilwale"
+                    ],
+                    "type": "MOVIE_BY_IMAGE",
+                    "id": "3d5005cba944d631b8e8d4b1353db7e6f463db4b",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/Xy3VFZo.jpg"
+                },
+                {
+                    "questionMd": "What is Shah Rukh Khan's sister's first name?",
+                    "answers": [
+                        "Lalarukh",
+                        "Nawaz",
+                        "Shahnaz",
+                        "Mumtaz"
+                    ],
+                    "type": "GENERAL",
+                    "id": "c25e76590777332a9c24a1ab247f66bd1cd2bf6e",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/v6BWGQW.jpg"
+                },
+                {
+                    "questionMd": "Which co-star was SRK's first on screen kiss?",
+                    "answers": [
+                        "Rani Mukerji",
+                        "Kajol",
+                        "Katrina Kaif",
+                        "Kareena Kapoor"
+                    ],
+                    "type": "GENERAL",
+                    "id": "1a8147e4c4b0502a812ad8abaefcb2c1377ac14c",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/wir06Ys.jpg"
+                },
+                {
+                    "questionMd": "*True or False*: Shah Rukh Khan received  Best Actor Filmfare Award for **Swades**",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "7e099c7ecc8103deb68ca38781c2d44b8d1cd98a",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/aFNaG4Z.jpg"
+                },
+                {
+                    "questionMd": "What is the character played by Shah Rukh Khan in **Chak De! India**?",
+                    "answers": [
+                        "Kabir Khan",
+                        "Devdas Mukherji",
+                        "Yeshwant Rao",
+                        "Dev Saran"
+                    ],
+                    "type": "CHARACTER_BY_MOVIE",
+                    "id": "12ceb17ab79bd54224440e747a123c36c3beb64f",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/2fsjUQJ.jpg"
+                },
+                {
+                    "questionMd": "In which year was **Chennai Express** released?",
+                    "answers": [
+                        "2013",
+                        "2010",
+                        "2016",
+                        "2015"
+                    ],
+                    "type": "YEAR_BY_MOVIE",
+                    "id": "b9fe07e3fbf26e439505994d44764c08c5731884",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/AMbM5Cf.jpg"
+                },
+                {
+                    "questionMd": "In which year was **Don 2** released?",
+                    "answers": [
+                        "2011",
+                        "2009",
+                        "2008",
+                        "2014"
+                    ],
+                    "type": "YEAR_BY_MOVIE",
+                    "id": "e8687405e70d48c37d0b41f41c7dcce5f4365a4d",
+                    "correctAnswerIdx": 0,
+                    "image": "TEST"
+                },
+                {
+                    "questionMd": "Guess the movie  \n![](https://i.imgur.com/zfXVh6Y.gif)",
+                    "answers": [
+                        "Dilwale Dulhania Le Jayenge",
+                        "Kuch Kuch Hota Hai",
+                        "Dil To Pagal Hai",
+                        "Kabhi Khushi Kabhie Gham"
+                    ],
+                    "type": "MOVIE_BY_IMAGE",
+                    "id": "380d39e4f6adb970a0c4b786f929403dd3edd3f6",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/syzbb3w.jpg"
+                },
+                {
+                    "questionMd": "Guess the movie  \n![](https://i.imgur.com/272xTNn.gif)",
+                    "answers": [
+                        "Happy New Year",
+                        "Jab Harry Met Sejal",
+                        "Jab Tak Hai Jaan",
+                        "Chennai Express"
+                    ],
+                    "type": "MOVIE_BY_IMAGE",
+                    "id": "e81d068e4b2c42cc4ccbb8f9369c89ea701ca649",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/zfXVh6Y.gif"
+                },
+                {
+                    "questionMd": "What is Shah Rukh Khan's trademark?",
+                    "answers": [
+                        "Muscular physique",
+                        "Slowly waving both hands in a rising upward motion",
+                        "His baritone voice",
+                        "His intense eyes"
+                    ],
+                    "type": "GENERAL",
+                    "id": "4bb051016224bb9c92420b86852db104310c9fa7",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/Pj5EVFf.jpg"
+                },
+                {
+                    "questionMd": "Guess the movie  \n![](https://i.imgur.com/nVVdGC1.gif)",
+                    "answers": [
+                        "Happy New Year",
+                        "Chennai Express",
+                        "Fan",
+                        "Ra.One"
+                    ],
+                    "type": "MOVIE_BY_IMAGE",
+                    "id": "e78be12210adf5631cafca3b55c3f645113d2ccd",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/EbmIw0L.jpg"
+                },
+                {
+                    "questionMd": "Guess the movie  \n![](https://i.imgur.com/MFQ3jSd.gif)",
+                    "answers": [
+                        "Chalte Chalte",
+                        "Devdas",
+                        "Kal Ho Naa Ho",
+                        "Om Shanthi Om"
+                    ],
+                    "type": "MOVIE_BY_IMAGE",
+                    "id": "b3921be11e317c96fcd98bf408df8fbe7554351f",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/yRvOoVA.jpg"
+                },
+                {
+                    "questionMd": "What is the character played by Shah Rukh Khan in **Kabhi Alvida Naa Kehna**?",
+                    "answers": [
+                        "Amarkanth Varma",
+                        "Rahul Khanna",
+                        "Dev Saran",
+                        "Kishanlal"
+                    ],
+                    "type": "CHARACTER_BY_MOVIE",
+                    "id": "40b911c34a4fccc7ae5204b4bb27c41c79894c15",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/Xy3VFZo.jpg"
+                }
+            ]
         },
         {
             "col": "https://i.imgur.com/PbA8R6Ll.png",
             "name": "🎬 entertainment",
             "type": "entertainment",
-            "quiz_role": "sarukhan",
-            "quiz_start_image": "https://i.imgur.com/1BRHMcG.jpg",
-            "quiz_collection": []
+            "quiz_role": "michael-jackson",
+            "quiz_start_image": "https://i.imgur.com/CBoOtM3.jpg",
+            "quiz_collection": [
+                {
+                    "questionMd": "*True or False*: Michael Jackson is the **fifth child** of the family",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "07d5513f016ae5763eb6a0335e6ea5cc35f3cae2",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/RFhQ6HE.jpg"
+                },
+                {
+                    "questionMd": "*True or False*: **Lisa Marie Presley** appeared in Michael's music video Thriller",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "ef3959e3da09fe7f307ac0c7fd07798e93576e76",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/SNwrqvi.jpg"
+                },
+                {
+                    "questionMd": "When did Michael Jackson perform the first moonwalk in front of a live audience?",
+                    "answers": [
+                        "1990",
+                        "1985",
+                        "1980",
+                        "1983"
+                    ],
+                    "type": "GENERAL",
+                    "id": "95f815d840e96d08654819ecfdba99454b91833b",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/AIKsRhi.jpg"
+                },
+                {
+                    "questionMd": "Guess the music video  \n![](https://i.imgur.com/RuDYLSB.gif)",
+                    "answers": [
+                        "Smooth Criminal",
+                        "Billie Jean",
+                        "You Rock My World",
+                        "Remember The Time"
+                    ],
+                    "type": "VIDEO_BY_IMAGE",
+                    "id": "f4c1a4d1fc36e1fd8eb2ac3fac9a1c0d03755b34",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/YNDFXCD.jpg"
+                },
+                {
+                    "questionMd": "In which song does Michael sing: *\"See that girl, she knows I'm watching. She likes the way I stare\"*?",
+                    "answers": [
+                        "The Way You Make Me Feel",
+                        "The Girl Is Mine",
+                        "Human Nature",
+                        "She Drives Me Wild"
+                    ],
+                    "type": "SONG_BY_LYRICS",
+                    "id": "99ead4b6c141baf63a8e3b9c89d90d2320f12de4",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/blBPweG.jpg"
+                },
+                {
+                    "questionMd": "What skin condition did Michael suffer from?",
+                    "answers": [
+                        "Eczema",
+                        "Vitiligo",
+                        "Urticaria",
+                        "Rosacea"
+                    ],
+                    "type": "GENERAL",
+                    "id": "0166d8ba734e25f6aa8335707d68c55162bdd410",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/UWdV32X.jpg"
+                },
+                {
+                    "questionMd": "Guess the music video  \n![](https://i.imgur.com/BjDzcj1.gif)",
+                    "answers": [
+                        "Billie Jean",
+                        "Don't Stop 'til You Get Enough",
+                        "Smooth Criminal",
+                        "Black or White"
+                    ],
+                    "type": "VIDEO_BY_IMAGE",
+                    "id": "422b381d4f35a55e9d3cd139e515c9073f70d8c9",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/EeuBQJz.jpg"
+                },
+                {
+                    "questionMd": "Guess the music video  \n![](https://i.imgur.com/jbv9F6j.gif)",
+                    "answers": [
+                        "Earth Song",
+                        "They Don't Care About Us",
+                        "Man In The Mirror",
+                        "Black or White"
+                    ],
+                    "type": "VIDEO_BY_IMAGE",
+                    "id": "f12e96fc674ef1489d5cedac13660f6088f05c44",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/un9oT9s.jpg"
+                },
+                {
+                    "questionMd": "Guess the music video  \n![](https://i.imgur.com/2j1vle8.gif)",
+                    "answers": [
+                        "Human Nature",
+                        "Earth Song",
+                        "Stranger In Moscow",
+                        "You Are Not Alone"
+                    ],
+                    "type": "VIDEO_BY_IMAGE",
+                    "id": "a67aa31a553f8e41cb6949210b17bd9ac3a8df04",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/yEY2RqR.jpg"
+                },
+                {
+                    "questionMd": "What did Michael Jackson dangle over the Berlin hotel balcony?",
+                    "answers": [
+                        "His signature fedora hat",
+                        "His baby Prince Michael Jackson II",
+                        "His write sequin glove",
+                        "His jacket famous for Billie Jean performance"
+                    ],
+                    "type": "GENERAL",
+                    "id": "cfb9ff385d9427490651cd968ffcbfa69b34f95d",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/Z0LNTQd.jpg"
+                },
+                {
+                    "questionMd": "*True or False*: Michael Jackson invented the **moonwalk**",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "3ee1363a5d56244562ae15e868303b7fa37bcca6",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/aB6N4EY.jpg"
+                },
+                {
+                    "questionMd": "When is Michael Jackson's birthday?",
+                    "answers": [
+                        "June 25, 1958",
+                        "August 29, 1958",
+                        "August 27, 1959",
+                        "June 29, 1960"
+                    ],
+                    "type": "GENERAL",
+                    "id": "b0d7b7998d6f18acfbb5c16b53cc3f643d27e3f6",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/a0qnKfh.jpg"
+                },
+                {
+                    "questionMd": "What is Michael Jackson's middle name?",
+                    "answers": [
+                        "James",
+                        "Jeremy",
+                        "Joseph",
+                        "Jermaine"
+                    ],
+                    "type": "GENERAL",
+                    "id": "40ab19645560556488201313dfaa61e459f2b317",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/RFhQ6HE.jpg"
+                },
+                {
+                    "questionMd": "In which song does Michael sing: *\"Mother always told me be careful of who you love. And be careful of what you do 'cause the lie becomes the truth\"*?",
+                    "answers": [
+                        "She's Out Of My Life",
+                        "Billie Jean",
+                        "Dangerous",
+                        "Man in the Mirror"
+                    ],
+                    "type": "SONG_BY_LYRICS",
+                    "id": "1b772ae8770cc5165876816fbff02c4a6ff1060f",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/SNwrqvi.jpg"
+                },
+                {
+                    "questionMd": "In which song does Michael sing: *\"She likes the boys in the bands. She knows when they come to town\"*?",
+                    "answers": [
+                        "Liberian Girl",
+                        "Billie Jean",
+                        "Give In To Me",
+                        "Dirty Diana"
+                    ],
+                    "type": "SONG_BY_LYRICS",
+                    "id": "c495946b84fc4c96e00a9838f6d26fae90dccdeb",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/AIKsRhi.jpg"
+                },
+                {
+                    "questionMd": "What is Michael's **best selling** album?",
+                    "answers": [
+                        "Bad",
+                        "Invincible",
+                        "Dangerous",
+                        "Thriller"
+                    ],
+                    "type": "GENERAL",
+                    "id": "85678217ed86ce6a7890b5a9b62b47b313cebe6e",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/YNDFXCD.jpg"
+                },
+                {
+                    "questionMd": "When did Michael Jackson die?",
+                    "answers": [
+                        "June 25, 2008",
+                        "June 25, 2009",
+                        "July 25, 2008",
+                        "July 25, 2009"
+                    ],
+                    "type": "GENERAL",
+                    "id": "c1a38a80690229a244009cfebf9b687b5e6321c8",
+                    "correctAnswerIdx": 1,
+                    "image": "https://i.imgur.com/blBPweG.jpg"
+                },
+                {
+                    "questionMd": "What did Michael Jackson *not* wear in his performance outfit?",
+                    "answers": [
+                        "Aviator sunglasses",
+                        "White sequin glove",
+                        "Multicolored socks",
+                        "Fedora hat"
+                    ],
+                    "type": "GENERAL",
+                    "id": "bdf92c9194629b75c2313491a45f37abf84cc69f",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/UWdV32X.jpg"
+                },
+                {
+                    "questionMd": "Which Michael Jackson album features the song **\"Liberian Girl\"**?",
+                    "answers": [
+                        "Bad",
+                        "Thriller",
+                        "Off the Wall",
+                        "Dangerous"
+                    ],
+                    "type": "GENERAL",
+                    "id": "e0c22693e28e0672b9931dd4fa46e1deeccd82aa",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/EeuBQJz.jpg"
+                },
+                {
+                    "questionMd": "In which song does Michael sing: *\"Touch me and I feel on fire. Ain't nothin' like a love desire\"*?",
+                    "answers": [
+                        "Don’t Stop ’til You Get Enough",
+                        "I Just Can't Stop Loving You",
+                        "Heartbreaker",
+                        "Give In To Me"
+                    ],
+                    "type": "SONG_BY_LYRICS",
+                    "id": "b3b74f7f7f8785fbd96780a992d35f0a72fee718",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/un9oT9s.jpg"
+                },
+                {
+                    "questionMd": "What concert tour was Michael rehearsing for when he died?",
+                    "answers": [
+                        "HIStory World Tour",
+                        "30th Anniversary Special Concert",
+                        "Dangerous World Tour",
+                        "This Is It"
+                    ],
+                    "type": "GENERAL",
+                    "id": "2f394b6cabbc92de05085bc52f43bbf3531e50dd",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/yEY2RqR.jpg"
+                },
+                {
+                    "questionMd": "*True or False*: Michael Jackson holds the world record for winning **most Grammy awards** in one night",
+                    "answers": [
+                        "True",
+                        "False"
+                    ],
+                    "type": "TOF",
+                    "id": "aec6889fd434d85249bece5eed0088c3c1905102",
+                    "correctAnswerIdx": 0,
+                    "image": "https://i.imgur.com/Z0LNTQd.jpg"
+                },
+                {
+                    "questionMd": "What is the **most expensive** music video by Michael Jackson?",
+                    "answers": [
+                        "Black or White",
+                        "Bad",
+                        "Scream",
+                        "Thriller"
+                    ],
+                    "type": "GENERAL",
+                    "id": "9e93c564f0f44428bfeaa426b290669eb951654c",
+                    "correctAnswerIdx": 2,
+                    "image": "https://i.imgur.com/aB6N4EY.jpg"
+                },
+                {
+                    "questionMd": "Guess the music video  \n![](https://i.imgur.com/D6xxaHc.gif)",
+                    "answers": [
+                        "Dirty Diana",
+                        "Billie Jean",
+                        "Scream",
+                        "Give In To Me"
+                    ],
+                    "type": "VIDEO_BY_IMAGE",
+                    "id": "10b3574a3a92718737cded5e830ff0048c22b03e",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/a0qnKfh.jpg"
+                },
+                {
+                    "questionMd": "Who is *not* a sibling of Michael Jackson?",
+                    "answers": [
+                        "Janet",
+                        "Rebbie",
+                        "La Toya",
+                        "Katherine"
+                    ],
+                    "type": "GENERAL",
+                    "id": "310d40879f70db0c5eb2ceef0d5fa61cb87c22b1",
+                    "correctAnswerIdx": 3,
+                    "image": "https://i.imgur.com/RFhQ6HE.jpg"
+                }
+            ]
         }
     ]
 }
