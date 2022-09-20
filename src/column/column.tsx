@@ -33,6 +33,7 @@ class Column extends React.Component<{}, MainState> {
   public getLastQuiz: number = 0;
   public scoreBoardEnabled: boolean = false;
   public isToggleStartQuiz: boolean = false;
+  public totalScore: number = 0;
 
   constructor(props: any) {
     super(props);
@@ -106,17 +107,18 @@ class Column extends React.Component<{}, MainState> {
   }
 
   quizSelected(index: number) {
+    let quizCollection = this.state.celebrarityData[0].quiz_collection[this.state.quizNumber];
     this.loadSeconds(false);
     this.loadMicroSeconds(false);
     this.setState({ selectedAnswerIndex: index });
     this.setState({ quizEvenSelected: true });
-    this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].answers.forEach((element: any, i: any) => {
-      if (index == this.state.celebrarityData[0].quiz_collection[this.state.quizNumber].correctAnswerIdx) {
-        this.setState({ selectedAnswer: true });
-      } else {
-        this.setState({ selectedAnswer: false });
-      }
-    });
+
+    if (index == quizCollection.correctAnswerIdx) {
+      this.setState({ selectedAnswer: true });
+      this.totalScore = this.totalScore + this.state.microSeconds.maxMicroSeconds;
+    } else {
+      this.setState({ selectedAnswer: false });
+    }
   }
 
   resettingIntervalVarivale() {
@@ -260,7 +262,7 @@ class Column extends React.Component<{}, MainState> {
             <h3>🏆 Your score</h3>
           </div>
           <div className="score-points">
-            {/* <h3 class="numberscore"> {{ totalScore }}</h3> */}
+            <h3 className="numberscore"> { this.totalScore }</h3>
           </div>
         </div>
         <div className="quiz-reasult">
